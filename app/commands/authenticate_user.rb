@@ -21,8 +21,7 @@ class AuthenticateUser
       return nil
     end
 
-    # Verify the password. You can create  a blankmethod for now.
-    unless user.authenticate(password)
+    unless user.valid_password?(password)
       errors.add :message, "Invalid email / password"
       return nil
     end

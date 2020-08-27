@@ -180,6 +180,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.2)
   byebug
   devise
@@ -188,7 +189,7 @@ DEPENDENCIES
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.2)
   rspec-rails
-  simple_command (~> 0.1.0)
+  simple_command
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3 (~> 1.4)
