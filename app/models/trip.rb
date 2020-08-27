@@ -1,2 +1,2 @@
-class Trip < ApplicationRecord
+class Trip < ActiveRecord::Base
 end
