@@ -9,7 +9,10 @@ module Api
       @current_api_user = AuthorizeApiRequest.call(request.headers)
                                              .result
 
-      render json: {  error: "This is not a authorized request." }, status: :unauthorized if !@current_api_user
+      if !@current_api_user
+        render json: {  error: "This is not a authorized request." },
+               status: :unauthorized
+      end
     end
   end
 end
