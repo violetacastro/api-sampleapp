@@ -6,7 +6,9 @@ trip_names.each do |trip_name|
   Trip.create(name: trip_name)
 end
 
-user_one = [
+user_one = {
   email: 'api@example.com',
   password: '123456'
-]
+}
+
+User.create!(user_one)
