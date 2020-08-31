@@ -5,3 +5,8 @@ trip_names = [  "Romantic Spots for Honeymoons",
 trip_names.each do |trip_name|
   Trip.create(name: trip_name)
 end
+
+user_one = [
+  email: 'api@example.com',
+  password: '123456'
+]
