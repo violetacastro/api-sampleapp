@@ -21,7 +21,8 @@ gem 'devise'
 gem 'jwt'
 # simpify code btwn model and controller
 gem 'simple_command'
-
+#cors
+gem 'rack-cors'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
