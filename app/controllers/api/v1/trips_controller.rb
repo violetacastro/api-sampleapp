@@ -1,5 +1,4 @@
 class Api::V1::TripsController < Api::ApplicationController
-  skip_before_action :authenticate_request
 
   def index
     trips = Trip.all

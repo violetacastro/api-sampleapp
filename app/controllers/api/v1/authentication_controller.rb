@@ -1,7 +1,8 @@
 class Api::V1::AuthenticationController < Api::ApplicationController
   skip_before_action :authenticate_request
-
+  #im creating a session, a token to compare
   def authenticate
+
     command = AuthenticateUser.call(params[:email], params[:password])
 
     if command.success?
