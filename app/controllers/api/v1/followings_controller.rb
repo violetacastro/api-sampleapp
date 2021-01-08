@@ -7,6 +7,7 @@ class Api::V1::FollowingsController < Api::ApplicationController
 
     following_exist = Following.find_by(follower_id: @current_api_user.id,
                                         author_id: params[:author_id])
+    binding.pry
     if following_exist
       render json: {}, status: 401
     elsif following.follower_id == following.author_id
