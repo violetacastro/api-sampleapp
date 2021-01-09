@@ -1,30 +1,53 @@
-trip_names = [  "Romantic Spots for Honeymoons",
-                "Top Island Getaways",
-                "Most Romantic Destinations",
-                "Top Spots for Skiing" ]
-trip_names.each do |trip_name|
-  Trip.create(name: trip_name)
-end
-
-# User one
-user_one = {
+# Users
+user_data = {
   email: 'api@example.com',
   password: '123456'
 }
 
-User.create!(user_one)
-# User two
-user_two = {
+user_one = User.create!(user_data)
+
+user_data = {
   email: 'api2@example.com',
   password: '654321'
 }
 
-User.create!(user_two)
+user_two = User.create!(user_data)
 
-# Following one
-following_one = {
-  author_id: 1,
-  follower_id: 2
+#trips
+trip_one_data = {
+  name: "Italy's best pizza places",
+  author_id: user_one.id
 }
 
-Following.create!(following_one)
+trip_one = Trip.create!(trip_one_data)
+
+trip_two_data = {
+  name: "Best Islands in Panama",
+  author_id: user_two.id
+}
+
+trip_two = Trip.create!(trip_two_data)
+
+
+trip_three_data = {
+  name: "My honymoon in Madives",
+  author_id: user_two.id
+}
+
+trip_three = Trip.create!(trip_three_data)
+
+
+trip_four_data = {
+  name: "Top mountains I've ever climbed",
+  author_id: user_one.id
+}
+
+trip_four = Trip.create!(trip_four_data)
+
+# Following
+following_one_data = {
+  author_id: user_one.id,
+  follower_id: user_two.id
+}
+
+following = Following.create!(following_one_data)
