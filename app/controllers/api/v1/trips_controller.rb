@@ -9,4 +9,13 @@ class Api::V1::TripsController < Api::ApplicationController
     render json: { results: trips }.to_json, status: :ok
   end
 
+  def show
+    # get one trip with ID
+    trip = Trip.find(params[:id])
+    if trip
+      render json: { trip: trip }, status: 200
+    else
+      render json: {}, status: 401
+    end
+  end
 end
