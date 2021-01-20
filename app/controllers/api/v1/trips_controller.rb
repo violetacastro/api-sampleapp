@@ -14,7 +14,7 @@ class Api::V1::TripsController < Api::ApplicationController
     trip = Trip.find_by(id: params[:id])
 
     if !trip
-      render json: { error: true, message: "Trip not found" }.to_json, status: 400
+      render json: { error: true, message: "Trip not found" }, status: 400
     else
       render json: { trip: trip }, status: 200
     end
