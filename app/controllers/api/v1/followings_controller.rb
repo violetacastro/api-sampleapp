@@ -32,7 +32,18 @@ class Api::V1::FollowingsController < Api::ApplicationController
                                  author_id: author_id)
       render json: { following: following }, status: 200
     end
+  end
 
+  def destroy
+
+      following = Following.find_by(id: params[:id])
+
+      if !following
+        render json: { error: true, message: "following not found" }, status: 400 
+      else
+        following.destroy
+        render json: { message: "successful unfollow" }, status: 202
+      end
   end
 
 end

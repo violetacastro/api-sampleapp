@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       # resources is for models only
       resources :trips, only: [:index, :show]
       resources :users, only: [:create]
-      resources :followings, only: [:create]
+      resources :followings, only: [:create, :destroy]
       # custom routes
       get 'get_following', to: 'followings#get_following'
     end

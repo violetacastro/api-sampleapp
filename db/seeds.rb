@@ -46,8 +46,8 @@ trip_four = Trip.create!(trip_four_data)
 
 # Following
 following_one_data = {
-  author_id: user_one.id,
-  follower_id: user_two.id
+  author_id: user_two.id,
+  follower_id: user_one.id
 }
 
 following = Following.create!(following_one_data)
