@@ -39,7 +39,11 @@ class Api::V1::FollowingsController < Api::ApplicationController
       following = Following.find_by(id: params[:id])
 
       if !following
+<<<<<<< HEAD
         render json: { error: true, message: "following not found" }, status: 400
+=======
+        render json: { error: true, message: "following not found" }, status: 400 
+>>>>>>> trip-details-page
       else
         following.destroy
         render json: { message: "successful unfollow" }, status: 202

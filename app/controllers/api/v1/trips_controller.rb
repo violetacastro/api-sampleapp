@@ -11,11 +11,12 @@ class Api::V1::TripsController < Api::ApplicationController
 
   def show
     # get one trip with ID
-    trip = Trip.find(params[:id])
-    if trip
-      render json: { trip: trip }, status: 200
+    trip = Trip.find_by(id: params[:id])
+
+    if !trip
+      render json: { error: true, message: "Trip not found" }, status: 400
     else
-      render json: {}, status: 401
+      render json: { trip: trip }, status: 200
     end
   end
 end
