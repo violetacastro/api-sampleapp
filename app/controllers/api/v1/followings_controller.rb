@@ -12,7 +12,7 @@ class Api::V1::FollowingsController < Api::ApplicationController
     elsif following.follower_id == following.author_id
       render json: { message: "cant follow yourself", error: true }, status: 400
     elsif following.save
-      render json: { message: "successful following" }, status: 201
+      render json: { following: following, message: "successful following" }, status: 201
     else
       render json: { message: "Oops we could not follow this user for you. Please try again soon",
                      errors: following.errors.full_messages, error: true }, status: 400
@@ -39,11 +39,7 @@ class Api::V1::FollowingsController < Api::ApplicationController
       following = Following.find_by(id: params[:id])
 
       if !following
-<<<<<<< HEAD
         render json: { error: true, message: "following not found" }, status: 400
-=======
-        render json: { error: true, message: "following not found" }, status: 400 
->>>>>>> trip-details-page
       else
         following.destroy
         render json: { message: "successful unfollow" }, status: 202
